@@ -1,14 +1,14 @@
 import HomeMeta from "./components/HomeMeta";
+import Header from "./components/Header";
+import Form from "./components/Form";
+
 
 function App() {
   return (
-    <div className="w-screen h-screen bg-slate-50		">
+    <div className='bg-site bg-no-repeat bg-cover overflow-hidden'>
       <HomeMeta />
-      <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold underline text-center text-red-500">
-          Hello world!
-        </h1>
-      </div>
+      <Header />
+      <Form />
     </div>
   );
 }
