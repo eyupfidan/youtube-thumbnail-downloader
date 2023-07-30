@@ -1,3 +1,19 @@
+@import url('https://fonts.cdnfonts.com/css/youtube-sans');
+body {
+    font-family: 'Youtube Sans', sans-serif;
+}
 .bg-light {
     padding: .8rem;
+    background-color: #CD201F!important;
+}
+.navbar-brand {
+    color:white;
+}
+.get-thumbnail {
+    background-color: black;
+    border:none;
+}
+.get-thumbnail:hover {
+    background-color: #CD201F;
+    border:none;
 }

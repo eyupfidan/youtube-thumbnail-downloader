@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar'
+import saveAs from 'file-saver';
 
 const ThumbnailDownloader = () => {
   const [thumbnailUrl, setThumbnailUrl] = useState('');
@@ -27,7 +28,8 @@ const ThumbnailDownloader = () => {
   }, [thumbnailUrl]);
 
   const downloadThumbnail = () => {
-    linkRef.current.click();
+    let url = linkRef.current.href
+    saveAs(url, "get-yt-thumb.jpg");
   };
 
   return (
@@ -41,7 +43,7 @@ const ThumbnailDownloader = () => {
           placeholder="Youtube URL"
           ref={youtubeUrlRef}
         />
-        <button className="btn btn-primary" type="button" onClick={getThumbnail}>
+        <button className="btn btn-primary get-thumbnail" type="button" onClick={getThumbnail}>
           Get Thumbnail
         </button>
       </div>
@@ -51,6 +53,7 @@ const ThumbnailDownloader = () => {
           <button className="btn btn-success mt-2" onClick={downloadThumbnail}>
             Download Thumbnail
           </button>
+          
           <a
             href="#"
             ref={linkRef}
@@ -63,7 +66,8 @@ const ThumbnailDownloader = () => {
     <Toaster
   position="bottom-right"
   reverseOrder={false}
-/>    </>
+/>    
+</>
   );
 };
 
